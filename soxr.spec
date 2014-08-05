@@ -92,6 +92,7 @@ It's high quality, one-dimensional sample-rate conversion library
 %setup -q -n %{name}-%{version}-Source
 
 %build
+export LDFLAGS="-Wl,--as-needed"
 %cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo
 %make
 
