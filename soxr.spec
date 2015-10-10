@@ -7,7 +7,7 @@
 Summary:	The SoX Resampler library
 Name:		soxr
 Version:	0.1.2
-Release:	1
+Release:	2
 License:	LGPLv2+
 Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
@@ -102,3 +102,5 @@ export LDFLAGS="-Wl,--as-needed"
 # Remove docs and use the rpmbuild macro instead
 rm -rf %{buildroot}%{_docdir}/*
 
+# fix pc file
+sed -i -e "s/-L%{_lib}//g" %{_libdir}/pkgconfig/*.pc
