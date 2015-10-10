@@ -103,4 +103,4 @@ export LDFLAGS="-Wl,--as-needed"
 rm -rf %{buildroot}%{_docdir}/*
 
 # fix pc file
-sed -i -e "s/-L%{_lib}//g" %{_libdir}/pkgconfig/*.pc
+sed -i -e "s/-L%{_lib}//g" %{buildroot}%{_libdir}/pkgconfig/*.pc
