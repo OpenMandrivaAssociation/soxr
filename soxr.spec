@@ -6,8 +6,8 @@
 
 Summary:	The SoX Resampler library
 Name:		soxr
-Version:	0.1.2
-Release:	4
+Version:	0.1.3
+Release:	1
 License:	LGPLv2+
 Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
@@ -93,7 +93,7 @@ It's high quality, one-dimensional sample-rate conversion library
 
 %build
 export LDFLAGS="-Wl,--as-needed"
-%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo
+%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DLIB_INSTALL_DIR="%{_libdir}"
 %make
 
 %install
