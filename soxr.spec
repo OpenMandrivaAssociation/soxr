@@ -15,6 +15,8 @@ Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-Source.tar.xz
 BuildRequires:	cmake
+BuildRequires:	pkgconfig(libavutil)
+BuildRequires:	pkgconfig(libavcodec)
 
 %description
 The SoX Resampler library libsoxr performs one-dimensional sample-rate
