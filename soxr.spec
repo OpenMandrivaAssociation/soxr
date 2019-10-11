@@ -4,10 +4,12 @@
 %define devname %mklibname %{name} -d
 %define devlsr %mklibname %{name}-lsr -d
 
+%global optflags %{optflags} -O3
+
 Summary:	The SoX Resampler library
 Name:		soxr
 Version:	0.1.3
-Release:	3
+Release:	4
 License:	LGPLv2+
 Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
@@ -92,12 +94,19 @@ It's high quality, one-dimensional sample-rate conversion library
 %setup -q -n %{name}-%{version}-Source
 
 %build
-export LDFLAGS="-Wl,--as-needed"
-%cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DLIB_INSTALL_DIR="%{_libdir}"
-%make
+%cmake -DCMAKE_BUILD_TYPE='Release' \
+    -DLIB_INSTALL_DIR="%{_libdir}" \
+    -DBUILD_EXAMPLES='OFF' \
+    -DBUILD_SHARED_LIBS='ON' \
+    -DWITH_AVFFT='ON' \
+    -DWITH_LSR_BINDINGS='ON' \
+    -DWITH_OPENMP='ON' \
+    -DWITH_PFFFT='ON'
+
+%make_build
 
 %install
-%makeinstall_std -C build
+%make_install -C build
 
 # Remove docs and use the rpmbuild macro instead
 rm -rf %{buildroot}%{_docdir}/*
