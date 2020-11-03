@@ -1,3 +1,4 @@
+%global debug_package %{nil}
 # soxr is used by pulseaudio, pulseaudio is used by wine
 %ifarch %{x86_64}
 %bcond_without compat32
