@@ -28,6 +28,9 @@ BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	pkgconfig(libavutil)
 BuildRequires:	pkgconfig(libavcodec)
+%if %{with compat32}
+BuildRequires:	libc6
+%endif
 
 %description
 The SoX Resampler library libsoxr performs one-dimensional sample-rate
