@@ -19,11 +19,14 @@
 Summary:	The SoX Resampler library
 Name:		soxr
 Version:	0.1.3
-Release:	8
+Release:	9
 License:	LGPLv2+
 Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
 Source0:	http://downloads.sourceforge.net/%{name}/%{name}-%{version}-Source.tar.xz
+Patch0:		0001-always-generate-.pc.patch
+Patch1:		0003-add-aarch64-support.patch
+Patch2:		0004-arm-fix-SIGILL-when-doing-divisions-on-some-old-arch.patch
 BuildRequires:	cmake
 BuildRequires:	ninja
 BuildRequires:	pkgconfig(libavutil)
