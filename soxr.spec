@@ -19,7 +19,7 @@
 Summary:	The SoX Resampler library
 Name:		soxr
 Version:	0.1.3
-Release:	9
+Release:	10
 License:	LGPLv2+
 Group:		Sound
 Url:		https://sourceforge.net/p/soxr/wiki/Home/
